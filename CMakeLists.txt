@@ -3,7 +3,33 @@ project(cache_replacement_policies C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(cache_replacement_policies main.c model/disk_model.c model/cache_model.c model/cache_model.h policies/lru.c policies/lru.h)
+set(
+        SOURCE_FILES_MODEL
+        model/disk_model.c
+)
 
-add_executable(tests tests/tests.c)
+set(
+        SOURCE_FILES_POLICIES
+        policies/lru.c policies/lru.h
+        policies/dummy.c policies/dummy.h
+)
+
+#add_executable(
+#        cache_replacement_policies
+#        ${SOURCE_FILES_MODEL}
+#        ${SOURCE_FILES_POLICIES}
+#)
+
+set(
+        SOURCE_FILES_TESTS
+        tests/tests.c
+)
+
+add_executable(
+        tests
+        ${SOURCE_FILES_TESTS}
+        ${SOURCE_FILES_MODEL}
+        ${SOURCE_FILES_POLICIES}
+)
+
 target_link_libraries(tests cmocka)
