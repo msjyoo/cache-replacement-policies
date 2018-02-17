@@ -1,7 +1,7 @@
 #ifndef CACHE_REPLACEMENT_POLICIES_DUMMY_H
 #define CACHE_REPLACEMENT_POLICIES_DUMMY_H
 
-#include "../model/disk_model.h"
+#include "../models/disk_model.h"
 
 #include <stdlib.h>
 

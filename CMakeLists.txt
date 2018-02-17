@@ -5,13 +5,14 @@ set(CMAKE_C_STANDARD 11)
 
 set(
         SOURCE_FILES_MODEL
-        model/disk_model.c
+        models/disk_model.c
 )
 
 set(
         SOURCE_FILES_POLICIES
-        policies/lru.c policies/lru.h
-        policies/dummy.c policies/dummy.h
+        policies/dummy.c
+        policies/lru.c
+        policies/fifo.c
 )
 
 #add_executable(
